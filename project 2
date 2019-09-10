@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+bool equivalent(int a[], int b[], int n){
+   int c=0;   
+   for(int i=0; i<n; i++){
+      c=0;
+      for(int j=0; j<n; j++){
+         if(a[j]==b[(j+i)%n]) c++; 
+         else break;
+         if(c==n) return true;          
+      }
+   }
+   return false;
+}
+   
+int main (){
+   int a[5]={1,2,3,4,5};
+   int b[5]={3,4,5,1,2};
+   cout<<equivalent(a,b,5);
+   return 0;
+}
